@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en">
+<header th:insert="blocks/header :: header"></header>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kodinger">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+<body class="my-login-page">
+
+<div class="container">
+
+</div>
+<br>
+<br>
+<br>
+
+<div class="container ">
+    <form class = "form-sign" th:action="@{/login}" method="post" action="/login">
+    <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+            <div class="brand">
+                <center>
+                    <a href="/"> <img src="https://static.tildacdn.com/tild3661-6262-4431-b163-396138383061/hr.png"></a>
+                </center>
+            </div>
+                <!-- error message -->
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">Invalid username or
+                        password.</div>
+                </div>
+
+                <!-- logout message -->
+                <div th:if="${param.logout}">
+                    <div class="alert alert-info">You have been logged out.</div>
+                </div>
+            <div class="form-group">
+            <div class="card-body">
+                <center>
+                    <h4 class="card-title">Войти</h4>
+                    </center>
+            </div>
+
+
+                <div class = "form-group">
+                    <label for ="username"> Email </label>
+                    <input type="text" class = "form-control" id ="username" name = "username"
+                           placeholder="Введите Email" autofocus="autofocus">
+                </div>
+
+
+
+                        <div class="form-group">
+                            <label  for="password">Пароль</label>
+                            <input id="password" type="text" class="form-control" name="password"
+                        placeholder="Введите пароль" autofocus="autofocus">
+                            <div class="invalid-feedback">
+                                Введите пароль
+                            </div>
+                        </div>
+
+                        <div class="form-group m-0">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Войти
+                            </button>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span> У вас нет аккаунта? <a href="/" th:href="@{/registration}">Регестрация</a></span>
+                        </div>
+            </div>
+        </div>
+    </div>
+    </form>
+            </form>
+        </div>
+
+    </div>
+
+    </form>
+</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/my-login.js"></script>
+</body>
+</html>
